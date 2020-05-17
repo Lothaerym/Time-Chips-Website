@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Infos</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="css/styleAccueil.css">
+		<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+
+
+	</head>
+	<body>
+
+
+
+{{ include('banner.html.twig') }}
+
+<div class="container-fluid">
+	<div class="row">
+  		<div class="col-xl-4">
+  			{{ include('menu.html.twig') }}
+  		</div>
+  		<div class="col-xl-8">
+  					<div id="infos">
+						<table id="scheduleTable" cellpadding="8px">
+							<th id="scheduleTh" colspan="3">Horaires d'ouverture</th>
+							<tr>
+								<td>Lundi</td>
+								<td>11h45-14h00</td>
+								<td>18h45-21H30</td>
+							</tr>
+							<tr>
+								<td>Mardi</td>
+								<td>Fermé</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Mercredi - Jeudi</td>
+								<td>11h45-14h00</td>
+								<td>18h45-21H30</td>
+							</tr>
+							<tr>
+								<td>Vendredi</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Samedi</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Dimanche</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+
+						<table id="scheduleTable" cellpadding="8px">
+							<th id="scheduleTh">Contact</th>
+							<tr>
+								<td>03 27 .....</td>
+							</tr>
+							<tr>
+								<td>29 rue Jean Jaurès 59590, Raismes</td>
+							</tr>
+						</table>
+
+						<a href="https://www.facebook.com">
+         					<img src="../images/facebook-logo.png" width="75" height="75">
+      					</a>
+      					<a href="https://www.google.fr/maps/place/29+Rue+Jean+Jaurès,+59590+Raismes/@50.391926,3.4769388,17z/data=!3m1!4b1!4m5!3m4!1s0x47c2eebc56724e8f:0x1b92290779b58d3!8m2!3d50.391926!4d3.4791275">
+         					<img src="../images/map-logo.png" width="140" height="100">
+      					</a>
+      					<a href="/contact">
+         					<img src="../images/contact-logo.png" width="55" height="55">
+      					</a>
+					</div>
+  		</div>
+		</div>
+</div>
+
+
+</body>
+</html

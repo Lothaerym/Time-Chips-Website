@@ -1,0 +1,89 @@
+
+#banniere{
+	background-image:url(../images/banniere.jpg);
+	width: 100%;
+	height: 300px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:100%;
+}
+
+#logo{
+	width: 400px;
+	height: 200px;
+	position: center;
+	margin-left:  30%;
+	margin-top:  50px;
+	margin-bottom: :  50px;
+}
+
+
+p{
+	margin : 2px;
+}
+
+body{
+	background-color: black;
+}
+
+#presentation{
+	font-size: 20px;
+	color: white;
+	font-family: 'Oranienbaum', arial;
+	margin-top: 30px;
+	width: 65%;
+}
+
+
+/* Demo Buttons Style */
+.codrops-demos {
+	padding-top: 1em;
+	font-size: 1.1em;
+	font-family: 'Oranienbaum', arial;
+}
+
+.codrops-demos a {
+	display: block;
+	float: left;
+	clear: both;
+	margin: 0.5em 0.5em 0.5em 1.9em;
+	padding: 1em 1.1em;
+	width: 280px;
+	outline: none;
+	color: #fff;
+	background: orange;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+	opacity: 0.6;
+}
+
+#scheduleTable, #scheduleTh {
+	border: 1px solid orange;
+}
+
+#scheduleTable{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+
+}
+
+#scheduleTh {
+	margin: 0 auto;
+	background-color: orange;
+}
+
+#infos{
+	margin: 0 auto;
+	font-size: 20px;
+	color: white;
+	font-family: 'Oranienbaum', arial;
+	width: 65%;
+	margin-top: 30px;
+}
