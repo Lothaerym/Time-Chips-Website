@@ -25,7 +25,7 @@ class PageAccueilController extends AbstractController
     }
     
     /**
-     * @Route("/{id}/edit", name="accueil_edit", methods={"GET","POST"})
+     * @Route("/{id}/editAccueil", name="accueil_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Accueil $accueil): Response
     {

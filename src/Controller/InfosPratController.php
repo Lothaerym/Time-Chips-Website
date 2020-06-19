@@ -24,7 +24,7 @@ class InfosPratController extends AbstractController
     }
     
    /**
-     * @Route("/{id}/edit", name="information_edit", methods={"GET","POST"})
+     * @Route("/{id}/editInfo", name="information_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Information $information): Response
     {
