@@ -5,17 +5,17 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class AccueilController extends AbstractController
+class MenuController extends AbstractController
 {
 	/**
-     * @Route("/")
+     * @Route("/menus")
      */
-    public function accueil()
+    public function menus()
     {
 
     	$test = "test";
 
-        return $this->render('accueil.html.twig', [
+        return $this->render('listMenus.html.twig', [
             'test' => $test,
         ]);
     }

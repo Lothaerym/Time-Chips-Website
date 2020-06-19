@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 juin 2020, 14:34:54
+    Author     : thomas
+*/
+
+
+#formAdmin {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field{
+  padding: 12px 20px;
+  margin: 8px 0;
+  color : grey;
+}
+
+.btn{
+    background-color: white;
+    border: solid;
+}

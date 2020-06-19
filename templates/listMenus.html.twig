@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Menus</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="css/styleAccueil.css">
+		<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+
+		{{ include('banner.html.twig') }}
+
+<div class="container-fluid">
+	<div class="row">
+  		<div class="col-xl-4">
+  			{{ include('menu.html.twig') }}
+  		</div>
+  		<div class="col-xl-8">
+  			<div id="presentation">
+				<button onclick="myFunction()" style="display: block;" class="menuDescription">Un menu</button>
+
+				<div id="myDIV" style="display: none;">
+  					La description d'un menu
+				</div>
+				
+				<button onclick="myFunction2()" style="display: block;" class="menuDescription">Un autre menu</button>
+
+				<div id="myDIV2" style="display: none;">
+  					La description d'un menu
+				</div>
+
+			</div>
+  		</div>
+
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<script type="text/javascript">
+	function myFunction2() {
+  var x = document.getElementById("myDIV2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>

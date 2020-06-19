@@ -17,15 +17,29 @@
   			{{ include('menu.html.twig') }}
   		</div>
   		<div class="col-xl-8">
+                    <a href="{{ path('accueil_edit', {'id': accueil.id}) }}">edit</a>
   			<div id="presentation">
-				<p> Bienvenue chez TIME CHIPS & GRILL ! </p> </br>
+				<!-- <p> Bienvenue chez TIME CHIPS & GRILL ! </p> </br>
 				<p> Situé dans la commune de Raismes, à proximité de la grand place et du parc loisirs et nature de la porte du Hainaut </p>
 				<p> C'est dans un cadre chaleureux et convivial que Dorine et Arnaud sont heureux de vous accueillir. </p>
 				<p> Après plus de 26 ans d'expériences en Friterie ambulante et en restauration rapide, l'aventure continue avec ce nouveau restaurant. </p>
 				<p> Service sur place ou à emporter. </p> </br>
-				<p> A très vite. </p>
+				<p> A très vite. </p> -->
+				{{accueil.content|raw}}
 			</div>
+
+			<!-- <a href="https://www.facebook.com"> -->
+				<a href={{accueil.facebookUrl}}>
+         		<img src="../images/facebook-logo.png" width="75" height="75">
+      		</a>
+<!--       		<a href="https://www.google.fr/maps/place/29+Rue+Jean+Jaurès,+59590+Raismes/@50.391926,3.4769388,17z/data=!3m1!4b1!4m5!3m4!1s0x47c2eebc56724e8f:0x1b92290779b58d3!8m2!3d50.391926!4d3.4791275"> -->
+			<a href={{accueil.mapUrl}}>
+         		<img src="../images/map-logo.png" width="140" height="100">
+      		</a>
+      		<a href="/contact">
+         		<img src="../images/contact-logo.png" width="55" height="55">
+      		</a>
   		</div>
 
 	</body>
-</html
+</html>

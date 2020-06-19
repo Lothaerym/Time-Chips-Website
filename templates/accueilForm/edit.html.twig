@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Accueil{% endblock %}
+
+{% block body %}
+    <div id='formAdmin'> 
+        <h1>Modification de l'accueil</h1>
+    
+
+    {{ include('accueilForm/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('accueil') }}">Retour</a>
+    </div>
+{% endblock %}

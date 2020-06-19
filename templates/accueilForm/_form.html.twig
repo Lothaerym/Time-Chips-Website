@@ -1,0 +1,32 @@
+<html>
+    <head>
+	<title>Accueil</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="../css/styleFormAdmin.css">
+	<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
+    <body>   
+        <div id='formAdmin'>
+            {{ form_start(form) }}
+            
+                <div class='field'>
+                    Contenu :
+                    {{ form_widget(form.content) }}
+                </div>
+                
+                <div class='field'>
+                    Adresse Facebook : 
+                    {{ form_widget(form.facebookUrl) }}
+                </div>
+                
+                <div class='field'>
+                    Adresse GoogleMap :
+                    {{ form_widget(form.mapUrl) }}
+                </div>
+                
+                <button class="btn">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </body>
+</html>
