@@ -1,0 +1,63 @@
+<html>
+    <head>
+	<title>Informations</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="../css/styleFormAdmin.css">
+	<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
+    <body>   
+        <div id='formAdmin'>
+            {{ form_start(form) }}
+            
+                <div class='field'>
+                    <div class='legend'> Lundi : </div>
+                    <div class='field-left'> {{ form_widget(form.mondayStart) }} </div>
+                    <div class='field-right '> {{ form_widget(form.mondayEnd) }} </div>
+                </div>
+                
+                <div class='field'>
+                    <div class='legend'> Mardi : </div>
+                    <div class='field-left'> {{ form_widget(form.tuesdayStart) }} </div>
+                    <div class='field-right '> {{ form_widget(form.tuesdayEnd) }} </div>
+                </div>  
+         
+                <div class='field'>
+                    <div class='legend'> Mercredi - Jeudi : </div>
+                    <div class='field-left'> {{ form_widget(form.wednesdayStart) }} </div>
+                    <div class='field-right '> {{ form_widget(form.wednesdayEnd) }} </div>
+                </div> 
+
+                <div class='field'>
+                    <div class='legend'> Vendredi : </div>
+                    <div class='field-left'> {{ form_widget(form.fridayStart) }} </div>
+                    <div class='field-right '> {{ form_widget(form.fridayEnd) }} </div>
+                </div> 
+                
+                <div class='field'>
+                    <div class='legend'> Samedi : </div>
+                    <div class='field-left'> {{ form_widget(form.saturdayStart) }} </div>
+                    <div class='field-right '> {{ form_widget(form.saturdayEnd) }} </div>
+                </div> 
+           
+                <div class='field'>
+                    <div class='legend'> Dimanche : </div>
+                    <div class='field-left'> {{ form_widget(form.sundayStart) }} </div>
+                    <div class='field-right '> {{ form_widget(form.sundayEnd) }} </div>
+                </div> 
+                
+                <div class='field'>
+                    Numéro de téléphone :
+                    {{ form_widget(form.phone) }}
+                </div>
+                
+                <div class='field'>
+                    Adresse :
+                    {{ form_widget(form.address) }}
+                </div>
+                
+                <button class="btn">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </body>
+</html>

@@ -27,8 +27,18 @@ input {
   padding: 12px 20px;
   margin: 8px 0;
   color : grey;
+  overflow: hidden;
 }
 
+.field-left{
+    width:45%;
+    float:left;
+}
+
+.field-right{
+    width:45%;
+    float:right;
+}
 .btn{
     background-color: white;
     border: solid;

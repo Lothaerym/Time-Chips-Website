@@ -21,48 +21,49 @@
   			{{ include('menu.html.twig') }}
   		</div>
   		<div class="col-xl-8">
+                                    <a href="{{ path('information_edit', {'id': infos.id}) }}">Modifier les informations</a>
   					<div id="infos">
 						<table id="scheduleTable" cellpadding="8px">
 							<th id="scheduleTh" colspan="3">Horaires d'ouverture</th>
 							<tr>
 								<td>Lundi</td>
-								<td>11h45-14h00</td>
-								<td>18h45-21H30</td>
+								<td>{{ infos.mondayStart }}</td>
+								<td>{{ infos.mondayEnd }}</td>
 							</tr>
 							<tr>
 								<td>Mardi</td>
-								<td>Fermé</td>
-								<td></td>
+								<td>{{ infos.tuesdayStart }}</td>
+								<td>{{ infos.tuesdayEnd }}</td>
 							</tr>
 							<tr>
 								<td>Mercredi - Jeudi</td>
-								<td>11h45-14h00</td>
-								<td>18h45-21H30</td>
+								<td>{{ infos.wednesdayStart }}</td>
+								<td>{{ infos.wednesdayEnd }}</td>
 							</tr>
 							<tr>
 								<td>Vendredi</td>
-								<td></td>
-								<td></td>
+								<td>{{ infos.fridayStart }}</td>
+								<td>{{ infos.fridayEnd }}</td>
 							</tr>
 							<tr>
 								<td>Samedi</td>
-								<td></td>
-								<td></td>
+								<td>{{ infos.saturdayStart }}</td>
+								<td>{{ infos.saturdayEnd }}</td>
 							</tr>
 							<tr>
 								<td>Dimanche</td>
-								<td></td>
-								<td></td>
+								<td>{{ infos.sundayStart }}</td>
+								<td>{{ infos.sundayEnd }}</td>
 							</tr>
 						</table>
 
 						<table id="scheduleTable" cellpadding="8px">
 							<th id="scheduleTh">Contact</th>
 							<tr>
-								<td>03 27 .....</td>
+								<td>{{ infos.phone }}</td>
 							</tr>
 							<tr>
-								<td>29 rue Jean Jaurès 59590, Raismes</td>
+								<td>{{ infos.address }}</td>
 							</tr>
 						</table>
 

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Informations{% endblock %}
+
+{% block body %}
+    <div id='formAdmin'> 
+        <h1>Modifier les informations pratiques</h1>
+
+        {{ include('information/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        <a href="{{ path('informations') }}">Retour</a>
+    </div>
+{% endblock %}
