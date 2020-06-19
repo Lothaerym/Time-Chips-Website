@@ -14,7 +14,7 @@
 	position: center;
 	margin-left:  30%;
 	margin-top:  50px;
-	margin-bottom: :  50px;
+	margin-bottom: 50px;
 }
 
 
@@ -92,4 +92,10 @@ body{
 	background-color: orange;
 	color: white;
 	width: 100%;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.4;
 }

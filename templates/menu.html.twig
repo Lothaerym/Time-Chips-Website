@@ -1,9 +1,26 @@
-		<div id="menu">
-			    <nav class="codrops-demos">
-                  <a class="current-demo" href="/">Accueil</a>
-                  <a href="/menus">Menu</a>
-                  <a href="/infos">Infos pratiques</a>
-                  <a href="index3.html">Avis</a>
-                  <a href="index3.html">Album photo</a>
-                </nav>
-		</div>
+<div id="menu">
+    <nav class="codrops-demos">
+        
+        {% if app.request.pathinfo == "/" %}         
+            <a href="/" class="disabled">Accueil</a>
+        {% else %}
+            <a href="/">Accueil</a>
+        {% endif %}
+        
+        {% if app.request.pathinfo == "/menus" %}         
+            <a href="/menus" class="disabled">Menu</a>
+        {% else %}
+            <a href="/menus">Menu</a>
+        {% endif %}
+        
+        {% if app.request.pathinfo == "/infos" %}         
+            <a href="/infos" class="disabled">Infos pratiques</a>
+        {% else %}
+            <a href="/infos">Infos pratiques</a>
+        {% endif %}
+        
+
+        <a href="index3.html">Avis</a>
+        <a href="index3.html">Album photo</a>
+    </nav>
+</div>
