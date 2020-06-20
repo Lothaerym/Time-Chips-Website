@@ -1,0 +1,29 @@
+<html>
+    <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="../../css/styleFormAdmin.css">
+	<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>   
+        <div id='formAdmin'>
+            
+            {{ form_start(form) }}
+            
+                <div class='field'>
+                    Titre :
+                    {{ form_widget(form.title) }}
+                </div>
+                
+                <div class='field'>
+                    Contenu : 
+                    {{ form_widget(form.content) }}
+                </div>
+                
+                <button class="btn">{{ button_label|default('Créer') }}</button>
+                
+            {{ form_end(form) }}
+        </div>
+    </body>
+</html>
