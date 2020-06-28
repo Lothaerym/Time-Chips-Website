@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Accueil</title>
+        
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/styleAccueil.css">
+	<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        
+        <!-- banner -->
+        {{ include('banner.html.twig') }}
+
+        <!-- content -->
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- menu -->
+                <div class="col-xl-4">
+                    {{ include('menu.html.twig') }}
+                </div>
+                
+                <!-- TODO: API Google my business (reviews) -->
+                <div class="col-xl-8" style="color:white">
+                    En construction
+                </div>
+                
+            </div>
+        </div>
+                
+    </body>
+<html>   

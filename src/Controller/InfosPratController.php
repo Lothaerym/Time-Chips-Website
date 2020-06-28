@@ -11,7 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class InfosPratController extends AbstractController
 {
-	/**
+    /*
+     * show various informations about restaurant
+     */
+    
+    /**
      * @Route("/infos", name="informations")
      */
     public function infos()
@@ -22,6 +26,11 @@ class InfosPratController extends AbstractController
             'infos' => $infos
         ]);
     }
+ 
+    
+    /*
+     * edit information
+     */
     
    /**
      * @Route("/{id}/editInfo", name="information_edit", methods={"GET","POST"})

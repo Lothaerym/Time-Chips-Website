@@ -15,6 +15,10 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class MenuController extends AbstractController
 {
+    /*
+     * show menus list
+     */
+    
     /**
      * @Route("/", name="menu_index", methods={"GET"})
      */
@@ -24,7 +28,11 @@ class MenuController extends AbstractController
             'menus' => $menuRepository->findAll(),
         ]);
     }
-
+    
+    /*
+     * create a new menu
+     */
+    
     /**
      * @Route("/new", name="menu_new", methods={"GET","POST"})
      */
@@ -48,6 +56,10 @@ class MenuController extends AbstractController
         ]);
     }
     
+    /*
+     * edit a menu
+     */
+    
     /**
      * @Route("/{id}/edit", name="menu_edit", methods={"GET","POST"})
      */
@@ -68,8 +80,12 @@ class MenuController extends AbstractController
         ]);
     }
 
+    /*
+     * delete a menu
+     */
+    
     /**
-     * @Route("/{id}", name="menu_delete", methods={"DELETE"})
+     * @Route("/{id}/delete", name="menu_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Menu $menu): Response
     {

@@ -1,77 +1,86 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-	<head>
-		<title>Infos</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <head>
+        <title>Infos</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="css/styleAccueil.css">
-		<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/styleAccueil.css">
+        <link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        
+        <!-- banner -->
+        {{ include('banner.html.twig') }}
 
-
-	</head>
-	<body>
-
-
-
-{{ include('banner.html.twig') }}
-
-<div class="container-fluid">
-	<div class="row">
+        <!-- content -->
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- menu -->
   		<div class="col-xl-4">
-  			{{ include('menu.html.twig') }}
+                    {{ include('menu.html.twig') }}
   		</div>
+                
+                <!-- innformations -->
   		<div class="col-xl-8">
-                                    <a href="{{ path('information_edit', {'id': infos.id}) }}">Modifier les informations</a>
-  					<div id="infos">
-						<table id="scheduleTable" cellpadding="8px">
-							<th id="scheduleTh" colspan="3">Horaires d'ouverture</th>
-							<tr>
-								<td>Lundi</td>
-								<td>{{ infos.mondayStart }}</td>
-								<td>{{ infos.mondayEnd }}</td>
-							</tr>
-							<tr>
-								<td>Mardi</td>
-								<td>{{ infos.tuesdayStart }}</td>
-								<td>{{ infos.tuesdayEnd }}</td>
-							</tr>
-							<tr>
-								<td>Mercredi - Jeudi</td>
-								<td>{{ infos.wednesdayStart }}</td>
-								<td>{{ infos.wednesdayEnd }}</td>
-							</tr>
-							<tr>
-								<td>Vendredi</td>
-								<td>{{ infos.fridayStart }}</td>
-								<td>{{ infos.fridayEnd }}</td>
-							</tr>
-							<tr>
-								<td>Samedi</td>
-								<td>{{ infos.saturdayStart }}</td>
-								<td>{{ infos.saturdayEnd }}</td>
-							</tr>
-							<tr>
-								<td>Dimanche</td>
-								<td>{{ infos.sundayStart }}</td>
-								<td>{{ infos.sundayEnd }}</td>
-							</tr>
-						</table>
+                    
+                    <!-- edit infos (if user is admin) -->
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('information_edit', {'id': infos.id}) }}">Modifier les informations</a>
+                    {% endif %}}
+                                    
+                    <!-- schedule -->
+                    <div id="infos">
+                        <table id="scheduleTable" cellpadding="8px">
+                            <th id="scheduleTh" colspan="3">Horaires d'ouverture</th>
+				<tr>
+                                    <td>Lundi</td>
+                                    <td>{{ infos.mondayStart }}</td>
+                                    <td>{{ infos.mondayEnd }}</td>
+				</tr>
+                                <tr>
+                                    <td>Mardi</td>
+					<td>{{ infos.tuesdayStart }}</td>
+                                        <td>{{ infos.tuesdayEnd }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mercredi - Jeudi</td>
+                                    <td>{{ infos.wednesdayStart }}</td>
+                                    <td>{{ infos.wednesdayEnd }}</td>
+				</tr>
+				<tr>
+                                    <td>Vendredi</td>
+                                    <td>{{ infos.fridayStart }}</td>
+                                    <td>{{ infos.fridayEnd }}</td>
+				</tr>
+				<tr>
+                                    <td>Samedi</td>
+                                    <td>{{ infos.saturdayStart }}</td>
+                                    <td>{{ infos.saturdayEnd }}</td>
+                                </tr>
+				<tr>
+                                    <td>Dimanche</td>
+                                    <td>{{ infos.sundayStart }}</td>
+                                    <td>{{ infos.sundayEnd }}</td>
+				</tr>
+			</table>
 
-						<table id="scheduleTable" cellpadding="8px">
-							<th id="scheduleTh">Contact</th>
-							<tr>
-								<td>{{ infos.phone }}</td>
-							</tr>
-							<tr>
-								<td>{{ infos.address }}</td>
-							</tr>
-						</table>
+                        <!-- miscellaneous -->
+			<table id="scheduleTable" cellpadding="8px">
+                            <th id="scheduleTh">Contact</th>
+				<tr>
+                                    <td>{{ infos.phone }}</td>
+				</tr>
+				<tr>
+                                    <td>{{ infos.address }}</td>
+				</tr>
+			</table>
 
-					</div>
+                    </div>
   		</div>
-		</div>
-</div>
-
-
-</body>
+            </div>
+        </div>
+                                
+    </body>
 </html

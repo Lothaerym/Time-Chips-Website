@@ -12,6 +12,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PageAccueilController extends AbstractController
 {
+    /*
+     * show the restaurant presentation
+     */
+    
     /**
      * @Route("/", name="accueil")
      */
@@ -23,6 +27,10 @@ class PageAccueilController extends AbstractController
             'accueil' => $accueil
         ]);
     }
+    
+    /*
+     * edit the presentation
+     */
     
     /**
      * @Route("/{id}/editAccueil", name="accueil_edit", methods={"GET","POST"})

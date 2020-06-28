@@ -1,47 +1,66 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-	<head>
-		<title>Menus</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <head>
+	<title>Menus</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="../css/styleAccueil.css">
-		<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
+	<link rel="stylesheet" href="../css/styleAccueil.css">
+	<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
 
-		{{ include('banner.html.twig') }}
+    <body>
+        
+        <!-- banner --> 
+        {{ include('banner.html.twig') }}
 
-<div class="container-fluid">
-	<div class="row">
+        <!-- content -->
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- menu -->
   		<div class="col-xl-4">
   			{{ include('menu.html.twig') }}
   		</div>
+                
+                <!-- menu list -->
   		<div class="col-xl-8">
-  			<div id="presentation">
+                    <div id="presentation">
                             
-                            {% for menu in menus %}
+                        {% for menu in menus %}
                                 
-                                <button onclick="article({{menu.id}})" style="display: block;" class="menuDescription"> {{ menu.title }} </button>
-
-				<div id="article{{ menu.id }}" style="display: none;">
-  					{{ menu.content|raw }}
-                                        <a href="{{ path('menu_edit', {'id': menu.id}) }}">Modifier</a>
-                                        {{ include('menu/_delete_form.html.twig') }}    
-				</div>
+                            <!-- dropdown button -->
+                            <button onclick="article({{menu.id}})" style="display: block;" class="menuDescription"> {{ menu.title }} </button>
                                 
-                            {% else %}
-                                <tr>
-                                    <td colspan="4">Aucun menu</td>
-                                </tr>
-                            {% endfor %}                            
+                            <!-- menu description -->
+                            <div id="article{{ menu.id }}" style="display: none;">
+                                {{ menu.content|raw }}
+                                    
+                                <!-- edit and delete a menu (if user is admin) -->
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">Modifier</a>
+                                    {{ include('menu/_delete_form.html.twig') }}   
+                                {% endif %} 
+                            </div>
+                            
+                        {% else %}
+                            <tr>
+                                <td colspan="4"> Aucun menu </td>
+                            </tr>
+                        {% endfor %}
+                        
+                        <!-- create new menu (if user is admin)-->
+                        {% if is_granted('ROLE_ADMIN') %}
                             <a href="{{ path('menu_new') }}"> Créer un nouvelle article </a>
-                                                                      
-			</div>
+                        {% endif %}                                             
+                    </div>
   		</div>
-
-	</body>
+            </div>
+        </div>
+                        
+    </body>
 </html>
 
+<!-- script for dropdown article -->
 <script type="text/javascript">
     function article(id) {
         var x = document.getElementById("article" + id);

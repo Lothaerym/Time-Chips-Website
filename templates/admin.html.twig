@@ -1,0 +1,23 @@
+{% block body %}
+    
+    <!-- login error -->
+    {% if error %}
+        {{ error.messageKey | trans(error.messagedata, 'security') }}
+    {% endif %}
+    
+    <!-- login form -->
+    <form action"{{ path('login') }}" method="post">
+        <div>
+            Nom :
+            <input type="text" id="username" name="_username" value="{{ last_username }}">
+        </div>
+        
+        <div>
+            Mot de passe :
+            <input type="password" id="password" name="_password">
+        </div>
+     
+        <button type="submit">Se connnecter</button>
+    </form>
+            
+{% endblock %}

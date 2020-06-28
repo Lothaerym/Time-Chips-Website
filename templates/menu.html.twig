@@ -1,3 +1,4 @@
+<!-- website menu -->
 <div id="menu">
     <nav class="codrops-demos">
         
@@ -7,7 +8,7 @@
             <a href="/">Accueil</a>
         {% endif %}
         
-        {% if app.request.pathinfo == "/menus" %}         
+        {% if app.request.pathinfo == "/menus/" %}         
             <a href="/menus" class="disabled">Menu</a>
         {% else %}
             <a href="/menus">Menu</a>
@@ -18,9 +19,14 @@
         {% else %}
             <a href="/infos">Infos pratiques</a>
         {% endif %}
-        
 
-        <a href="index3.html">Avis</a>
-        <a href="index3.html">Album photo</a>
+        {% if app.request.pathinfo == "/avis" %}         
+            <a href="/avis" class="disabled">Avis</a>
+        {% else %}
+            <a href="/avis">Avis</a>
+        {% endif %}        
+s
+        <a href="/album">Album photo</a>
+        
     </nav>
 </div>
