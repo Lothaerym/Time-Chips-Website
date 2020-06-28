@@ -99,3 +99,13 @@ a.disabled {
   cursor: default;
   opacity: 0.4;
 }
+
+#album{
+    margin-top: 30px;
+}
+
+.picture{
+    width:200px;
+    height:200px;
+       
+}
