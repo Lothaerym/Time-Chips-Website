@@ -109,3 +109,12 @@ a.disabled {
     height:200px;
        
 }
+
+.picture2{
+       max-width: 100%;
+       
+}
+
+.modal-dialog-lg{
+    width: 60%;
+}

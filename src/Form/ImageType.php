@@ -20,11 +20,12 @@ class ImageType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '2048k',
+                        'maxSize' => '5M',
                         'mimeTypes' => [
                             'application/pdf',
                             'application/x-pdf',
                             'image/png',
+                            'image/jpeg',
                         ],
                         'mimeTypesMessage' => 'Fichier invalide',
                     ])
