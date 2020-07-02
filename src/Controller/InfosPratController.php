@@ -20,10 +20,13 @@ class InfosPratController extends AbstractController
      */
     public function infos()
     {
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+         
         $infos = $this->getDoctrine()->getRepository(Information::class)->find(1);
 
         return $this->render('infosPrat.html.twig', [
-            'infos' => $infos
+            'infos' => $infos,
+            'banners' => $scandir
         ]);
     }
  

@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Image;
+use App\Form\ImageType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Accueil;
 use App\Form\AccueilType;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class PageAccueilController extends AbstractController
 {
@@ -21,10 +23,13 @@ class PageAccueilController extends AbstractController
      */
     public function accueil()
     {
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+        
         $accueil = $this->getDoctrine()->getRepository(Accueil::class)->find(1);
 
         return $this->render('accueil.html.twig', [
-            'accueil' => $accueil
+            'accueil' => $accueil,
+            'banners' => $scandir
         ]);
     }
     
@@ -52,22 +57,43 @@ class PageAccueilController extends AbstractController
         ]);
     }
 
-        /**
-     * @Route("/genAccueil")
+    /**
+     * @Route("/imageBanner/new", name="image_banner_new")
      */
-    // public function genAccueil()
-    // {
-    //     $entityManager = $this->getDoctrine()->getManager();
+    public function new(Request $request, SluggerInterface $slugger)
+    {
+        $image = new Image();
+        $form = $this->createForm(ImageType::class, $image);
+        $form->handleRequest($request);
 
-    //     $accueil = new Accueil();
-    //     $accueil->setContent("aaaa");
-    //     $accueil->setFacebookUrl("aaa");
-    //     $accueil->setMapUrl("aaa");
+        if ($form->isSubmitted() && $form->isValid()) {
+            $photoFile = $form->get('photo')->getData();
 
-    //     $entityManager->persist($accueil);
-    //     $entityManager->flush();
-        
 
-    //     return new Response('test'.$accueil->getId());
-    // }
+            if ($photoFile) {
+                $originalFilename = pathinfo($photoFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$photoFile->guessExtension();
+
+                try {
+                    $photoFile->move(
+                        $this->getParameter('photo_banner_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    echo("Probleme");
+                }
+
+                $image->setName($newFilename);
+            }
+
+
+            return $this->redirect($this->generateUrl('album'));
+        }
+
+            return $this->render('image/newImage.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }

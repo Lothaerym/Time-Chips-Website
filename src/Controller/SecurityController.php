@@ -18,12 +18,15 @@ class SecurityController extends AbstractController {
      */
     public function login(AuthenticationUtils $authenticationUtils){
                
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+         
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         
         return $this->render('admin.html.twig', [
             'last_username' => $lastUsername,
-            'error' => $error
+            'error' => $error,
+            'banners' => $scandir
         ]);
     }
 }

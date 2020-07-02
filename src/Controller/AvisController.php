@@ -22,9 +22,9 @@ class AvisController extends AbstractController
      */
     public function avis()
     {
-
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
         return $this->render('avis.html.twig', [
-
+            'banners' => $scandir
         ]);
     }
 }

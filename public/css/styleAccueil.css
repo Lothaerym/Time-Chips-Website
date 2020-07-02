@@ -118,3 +118,37 @@ a.disabled {
 .modal-dialog-lg{
     width: 60%;
 }
+
+#bannerCarousel{
+ height: 500px;
+ width: 100%;
+ position: relative;
+ 
+}
+
+
+.abanner {
+    height: 500px;
+
+}
+
+.carousel-item {
+    text-align: center;
+    height: 100%;
+
+}
+
+#blurbackground{
+    background-image: url('../images/banniere.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+  filter: blur(10px);
+  z-index: -1;
+}
+
+
+

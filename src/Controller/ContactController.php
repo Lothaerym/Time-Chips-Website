@@ -23,6 +23,8 @@ class ContactController extends AbstractController
      */
     public function contact(Request $request, MailProcess $mail): Response
     {
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+         
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
@@ -36,6 +38,7 @@ class ContactController extends AbstractController
         
         return $this->render('contact/contact.html.twig', [
             'form' => $form->createView(),
+            'banners' => $scandir
         ]);
     }
 }
