@@ -26,9 +26,10 @@
                     {{ include('menu.html.twig') }}
   		</div>
                 
-                <!-- innformations -->
+                <!-- informations -->
   		<div class="col-xl-8">
                     
+                    {% if infos != null %}
                     <!-- edit infos (if user is admin) -->
                     {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('information_edit', {'id': infos.id}) }}">Modifier les informations</a>
@@ -82,6 +83,9 @@
 			</table>
 
                     </div>
+                    {% else %}
+                        <p style="color:white">Aucune information trouvée : vérifier les migrations
+                    {% endif %}
   		</div>
             </div>
         </div>

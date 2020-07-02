@@ -11,6 +11,7 @@ use App\Entity\Accueil;
 use App\Form\AccueilType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PageAccueilController extends AbstractController
 {
