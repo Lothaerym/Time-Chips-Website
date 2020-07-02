@@ -1,0 +1,29 @@
+ <html>
+    <head>
+	<link rel="stylesheet" href="../../css/styleFormContact.css">
+	<link href="http://fr.allfont.net/allfont.css?fonts=oranienbaum" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        {{ form_start(form) }}
+            <div id='formAdmin'> 
+                
+                <div class='field'>
+                    Votre nom :
+                    {{ form_widget(form.name) }}
+                </div>
+                
+                <div class='field'>
+                    Votre adresse mail : 
+                    {{ form_widget(form.email) }}
+                </div>
+    
+                <div class='field'>
+                    Votre message : 
+                    {{ form_widget(form.message) }}
+                </div>    
+                
+                <button class="btn">{{ button_label|default('Envoyer') }}</button>
+            </div>              
+        {{ form_end(form) }}
+    </body>
+</html>
