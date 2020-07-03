@@ -13,6 +13,9 @@ Site vitrine du restaurant Time Chips &amp; Grills de Raismes
 
 - php bin/console doctrine:migrations:migrate
 
+- php bin/console ckeditor:install
+- php bin/console assets:install --symlink
+
 - php -S localhost:8000 -t public
 
 # Administrator connection
