@@ -18,7 +18,7 @@ class SecurityController extends AbstractController {
      */
     public function login(AuthenticationUtils $authenticationUtils){
                
-        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.', '.DS_Store'));
          
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();

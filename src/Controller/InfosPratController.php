@@ -20,7 +20,7 @@ class InfosPratController extends AbstractController
      */
     public function infos()
     {
-        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.', '.DS_Store'));
          
         $infos = $this->getDoctrine()->getRepository(Information::class)->find(1);
 

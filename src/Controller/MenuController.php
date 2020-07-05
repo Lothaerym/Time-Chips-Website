@@ -24,7 +24,7 @@ class MenuController extends AbstractController
      */
     public function index(MenuRepository $menuRepository): Response
     {
-         $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+         $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.', '.DS_Store'));
          
         return $this->render('listMenus.html.twig', [
             'menus' => $menuRepository->findAll(),

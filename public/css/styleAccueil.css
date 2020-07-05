@@ -23,7 +23,9 @@ p{
 }
 
 body{
-	background-color: black;
+	background-color: #1a1918;
+        margin-left: 5%;
+        margin-right: 5%;
 }
 
 #presentation{
@@ -51,7 +53,7 @@ body{
 	width: 280px;
 	outline: none;
 	color: #fff;
-	background: orange;
+	background: #d46115;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 700;
@@ -64,7 +66,7 @@ body{
 }
 
 #scheduleTable, #scheduleTh {
-	border: 1px solid orange;
+	border: 1px solid #d46115;
 }
 
 #scheduleTable{
@@ -76,7 +78,7 @@ body{
 
 #scheduleTh {
 	margin: 0 auto;
-	background-color: orange;
+	background-color: #d46115;
 }
 
 #infos{
@@ -89,7 +91,7 @@ body{
 }
 
 .menuDescription{
-	background-color: orange;
+	background-color: #d46115;
 	color: white;
 	width: 100%;
 }
@@ -150,5 +152,60 @@ a.disabled {
   z-index: -1;
 }
 
+/* Home brand*/
+#title{
+margin-left: 15%;
+margin-top: 25px;
+}
+
+.fire{
+transform: translate(0, 10px);
+float:left;
+}
+
+/* Brand animation */
+.ml11 {
+  font-weight: 700;
+  font-size: 5.5em;
+  color: white;
+  font-family: 'Oranienbaum', arial;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
 
 
+
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+
+/* Brand animation */
+.ml11bis {
+  font-weight: 700;
+  font-size: 2em;
+  color: #d46115;
+  font-family: 'Oranienbaum', arial;
+  text-align: center;
+}
+
+.ml11bis .text-wrapperbis{
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11bis .letterbis {
+  display: inline-block;
+  line-height: 1em;
+}

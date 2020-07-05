@@ -23,10 +23,10 @@ class AlbumController extends AbstractController
      */
     public function index()
     {
-         $scandirBanner = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+         $scandirBanner = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.', '.DS_Store'));
          
         // Files list (photos) with scandir + remove dots of scadir with array_diff
-        $scandir = array_diff(scandir("./../public/uploads/photo"), array('..', '.'));
+        $scandir = array_diff(scandir("./../public/uploads/photo"), array('..', '.', '.DS_Store'));
 
         return $this->render('album/index.html.twig', [
             'photos' => $scandir,

@@ -10,15 +10,45 @@
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    
     </head>
     
     <body>
-
+        <div class="page">
         <!-- banner -->
 
         {{ include('banner.html.twig') }}     
+       
+        <!-- Brand -->
+        <div id="title">         
+            <!-- Fire animation -->
+            <div class="fire">
+                {% for i in 0..50 %}
+                    <div class="particle">                                  
+                    </div>
+                {% endfor %}
+            </div>
 
+            <!-- Brand animation-->
+            <div class="ml11">
+                <span class="text-wrapper">
+                <span class="line line1"></span>
+                <span class="letters">Time Chips & Grill</span>
+                </span>
+            </div>
+            
+            <!-- Brand animation bis-->
+            <div class="ml11bis">
+                <span class="text-wrapperbis">
+                <span class="linebis line1bis"></span>
+                <span class="lettersbis">Le meilleur pour la faim</span>
+                </span>
+            </div>
+
+
+        </div>
+   
         <!-- content -->
         <div class="container-fluid">
             <div class="row">
@@ -30,6 +60,7 @@
   		</div>
                 
   		<div class="col-xl-8">
+                    
                     
                     {% if accueil != null %}
                     <!-- edit home (if user is admin) -->
@@ -59,14 +90,80 @@
                     {% endif %}
   		</div>
             </div>
-                <!-- Fire animation-->
-                <div class="fire">
-                    {% for i in 0..50 %}
-                        <div class="particle">                                  
-                        </div>
-                    {% endfor %}
-                </div>
+
        
         </div>
+        </div>         
     </body>
 </html>
+
+
+<script type="text/javascript">
+    var textWrapper = document.querySelector('.ml11 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+    var textWrapper2 = document.querySelector('.ml11bis .lettersbis');
+    textWrapper2.innerHTML = textWrapper2.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letterbis'>$&</span>");
+
+    anime.timeline({loop: true})
+        .add({
+            targets: '.ml11 .line',
+            scaleY: [0,1],
+            opacity: [0.5,1],
+            easing: "easeOutExpo",
+            duration: 700
+        })
+        .add({
+            targets: '.ml11 .line',
+            translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+            easing: "easeOutExpo",
+            duration: 700,
+            delay: 100
+        })
+        .add({
+            targets: '.ml11 .letter',
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=775',
+            delay: (el, i) => 34 * (i+1)
+        })
+
+
+        .add({
+            targets: '.ml11bis .linebis',
+            scaleY: [0,1],
+            opacity: [0.5,1],
+            easing: "easeOutExpo",
+            duration: 700
+        })
+        .add({
+            targets: '.ml11bis .linebis',
+            translateX: [0, document.querySelector('.ml11bis .lettersbis').getBoundingClientRect().width + 10],
+            easing: "easeOutExpo",
+            duration: 700,
+            delay: 100
+        })
+        .add({
+            targets: '.ml11bis .letterbis',
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=775',
+            delay: (el, i) => 34 * (i+1)
+        })
+        .add({
+            targets: '.ml11bis',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1500
+        })
+        
+        .add({
+            targets: '.ml11',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 0,
+        })
+</script>

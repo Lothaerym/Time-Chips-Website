@@ -24,7 +24,7 @@ class PageAccueilController extends AbstractController
      */
     public function accueil()
     {
-        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.', '.DS_Store'));
         
         $accueil = $this->getDoctrine()->getRepository(Accueil::class)->find(1);
 

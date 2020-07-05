@@ -23,7 +23,7 @@ class ContactController extends AbstractController
      */
     public function contact(Request $request, MailProcess $mail): Response
     {
-        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.'));
+        $scandir = array_diff(scandir("./../public/uploads/photoBanner"), array('..', '.', '.DS_Store'));
          
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);

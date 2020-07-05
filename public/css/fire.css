@@ -4,10 +4,11 @@
   font-size: 24px;
   filter: blur(0.02em);
   -webkit-filter: blur(0.02em);
-  margin: 3em auto 0 auto;
-  position: absolute;
+  margin: 0 auto 0 auto;
+
   width: 10em;
-  height: 12em;
+  height: 6em;
+  text-align: right;
 
 }
 
